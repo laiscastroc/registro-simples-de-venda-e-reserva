@@ -1,4 +1,3 @@
-// url base da API no mesmo dominio do frontend
 const API_URL = '/api'
 
 function normalizeImageUrl(imageUrl: string) {
@@ -8,8 +7,7 @@ function normalizeImageUrl(imageUrl: string) {
   return `/${imageUrl}`
 }
 
-
-//busca todos os pássaros e retorna em json
+//busca todos os pássaros 
 export async function getBirds() {
   const response = await fetch(`${API_URL}/birds`)
 
@@ -34,6 +32,7 @@ export const createSale = async(sale: any) => {
         body: JSON.stringify(sale)
     })
 
+    //teste para verificar se está retornando id ou não, fiz porque tive problema de erro para salvar
     const responseText = await res.text()
 
     if (!res.ok) {
@@ -43,13 +42,12 @@ export const createSale = async(sale: any) => {
     const savedSale = responseText ? JSON.parse(responseText) : null
 
     if (!savedSale?.id) {
-      throw new Error("A API respondeu sucesso, mas não retornou o ID da venda.")
+      throw new Error("API ok, mas não retornou o ID da venda.")
     }
-
     return savedSale
 }
 
-//busca todos as vendas  e retorna em json
+//pegar todos as vendas 
 export const getSale = async() => {
     const res = await fetch(`${API_URL}/sales`)
 
@@ -77,13 +75,12 @@ export const loginUser = async (email: string, password: string) => {
     data = responseText ? JSON.parse(responseText) : {}
   } catch {
     data = {
-      message: responseText || 'A rota de login nao retornou uma resposta valida.'
+      message: responseText || 'Sem retorno válido!'
     }
   }
 
   if (!res.ok) {
-    throw new Error(data.message || 'Erro ao realizar login')
+    throw new Error(data.message || 'Erro ao realizar login!')
   }
-
   return data
 }

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 import { onMounted, ref } from "vue"
 import BirdCard from "../components/BirdCard.vue"
 import { getBirds } from "../services/api"
@@ -47,6 +48,7 @@ onMounted(async () => {
 </template>
 
 <style scoped>
+
 .text-group {
   display: flex;
   flex-direction: column;
@@ -82,4 +84,5 @@ onMounted(async () => {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 24px;
 }
+
 </style>

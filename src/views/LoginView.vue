@@ -37,7 +37,7 @@ const handleLogin = async () => {
     <section class="login-image-panel" aria-label="Aves">
       <img
         src="/birds.jpg"
-        alt="Aves coloridas"
+        alt="Aves"
         class="login-image"
       />
     </section>
@@ -259,4 +259,5 @@ const handleLogin = async () => {
     font-size: 32px;
   }
 }
+
 </style>

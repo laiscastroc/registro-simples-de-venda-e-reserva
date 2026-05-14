@@ -1,10 +1,6 @@
-
- 
 <script setup lang="ts">
 
 import { useRouter } from 'vue-router';
-
-/*props = dados que o card recebe do componente pai cada card representa um pássaro*/
 
 const props = defineProps({
   name: String,
@@ -22,26 +18,23 @@ function handleRegister(){
 
 
 </script>
-
 <template>
 
-  <!-- CARD -->
+  <!-- cards + detalhes -->
+
   <div class="card">
     <div class="image">
       <img :src="image" alt="pássaro">
 
-      <!-- BADGE -->
       <span class="badge">
         Legalizado
       </span>
     </div>
 
-    <!-- INFORMAÇÕES -->
      <div class="info">
   <h2 class="name">
     {{ name }}
   </h2>
-
 
   <p class="scientific">
     {{ scientific }}
@@ -66,7 +59,6 @@ function handleRegister(){
 <style scoped>
 
 /* cards */
-
 .card{
 background:white;
 border-radius:14px;
@@ -83,8 +75,7 @@ transform:translateY(-4px);
 box-shadow:0 10px 22px rgba(0,0,0,0.12);
 }
 
-/* imagem */
-
+/* imagens */
 .image{
 position:relative;
 height:180px;
@@ -97,8 +88,6 @@ height:100%;
 object-fit:cover;
 }
 
-/* BADGE LEGALIZADO */
-
 .badge{
 position:absolute;
 top:10px;
@@ -110,8 +99,6 @@ padding:4px 10px;
 border-radius:8px;
 font-weight:600;
 }
-
-/* INFORMAÇÕES */
 
 .info{
 padding:18px;
@@ -163,4 +150,5 @@ color:#6b7280;
 .name {
   flex: 1;
 }
+
 </style>

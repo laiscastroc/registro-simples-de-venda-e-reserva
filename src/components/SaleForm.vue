@@ -14,6 +14,7 @@ const includeLegalization = ref(true)
 const saving = ref(false)
 const authError = ref("")
 
+//lógica de quantidade e valores
 function increaseQty() {
   quantity.value++
 }
@@ -39,8 +40,9 @@ const total = computed(() =>
 const submit = async (status: "VENDA" | "RESERVA") => {
   authError.value = ""
 
+  //você só consegue registrar se tiver logado
   if (localStorage.getItem("loggedIn") !== "true") {
-    authError.value = "Erro ao registrar, faça o login primeiro."
+    authError.value = "Erro ao registrar, faça o login primeiro!"
     return
   }
 
@@ -77,17 +79,16 @@ const submit = async (status: "VENDA" | "RESERVA") => {
     saving.value = false
   }
 }
+
 </script>
 
 <template>
   <div class="form-container">
-    <!-- CABEÇALHO -->
     <div class="header">
       <h2>Registrar Compra</h2>
       <p>Preencha os dados para concluir a venda</p>
     </div>
 
-    <!-- CARD DA AVE -->
     <div class="bird-card">
       <img :src="bird.image_url" alt="ave" />
 
@@ -98,7 +99,6 @@ const submit = async (status: "VENDA" | "RESERVA") => {
       </div>
     </div>
 
-    <!-- LINHA -->
     <div class="row">
       <div class="field">
         <label>Quantidade</label>
@@ -118,7 +118,6 @@ const submit = async (status: "VENDA" | "RESERVA") => {
       </div>
     </div>
 
-    <!-- LEGALIZAÇÃO -->
     <div class="legalization">
       <div>
         <strong>Taxa de legalização</strong>
@@ -128,7 +127,6 @@ const submit = async (status: "VENDA" | "RESERVA") => {
       <input type="checkbox" v-model="includeLegalization" />
     </div>
 
-    <!-- DADOS -->
     <div class="field">
       <label>Nome do comprador</label>
       <input v-model="buyer_name" placeholder="Digite o nome completo" />
@@ -153,7 +151,6 @@ const submit = async (status: "VENDA" | "RESERVA") => {
       </select>
     </div>
 
-    <!-- RESUMO -->
     <div class="summary">
       <div>
         <span>Subtotal</span>
@@ -171,7 +168,6 @@ const submit = async (status: "VENDA" | "RESERVA") => {
       </div>
     </div>
 
-    <!-- AÇÕES -->
     <div class="actions">
       <button class="reserve" :disabled="saving" @click="submit('RESERVA')">
         Reservar
@@ -355,4 +351,5 @@ const submit = async (status: "VENDA" | "RESERVA") => {
   font-weight: 600;
   text-align: center;
 }
+
 </style>

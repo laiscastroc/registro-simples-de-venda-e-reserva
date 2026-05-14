@@ -1,21 +1,13 @@
 <script setup lang="ts">
 import { computed, onMounted, ref, watch } from "vue"
 import { useRoute, useRouter } from "vue-router"
-
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome"
-
-import {
-  faFileLines,
-  faCartArrowDown,
-  faCircleUser
-} from "@fortawesome/free-solid-svg-icons"
+import { faFileLines, faCartArrowDown, faCircleUser } from "@fortawesome/free-solid-svg-icons"
 
 const route = useRoute()
 const router = useRouter()
-
 const isLogged = ref(false)
 const showLogoutMenu = ref(false)
-
 const syncLoginState = () => {
   isLogged.value = localStorage.getItem("loggedIn") === "true"
 }
@@ -55,17 +47,13 @@ const isPurchaseActive = computed(() => {
 const isLoginPage = computed(() => {
   return route.path === "/login"
 })
+
 </script>
 
 <template>
   <div class="page-container">
-
     <template v-if="!isLoginPage">
-
-      <!-- HEADER -->
       <header class="header-container">
-
-        <!-- LOGO -->
         <router-link to="/" class="logo-link">
           <img
             src="/logo.png"
@@ -74,7 +62,6 @@ const isLoginPage = computed(() => {
           />
         </router-link>
 
-        <!-- TEXTO -->
         <div class="text-group">
           <h1 class="header-title">
             AvesBrasil
@@ -85,13 +72,11 @@ const isLoginPage = computed(() => {
           </h3>
         </div>
 
-        <!-- LOGIN STATUS -->
         <div class="login-area">
           <button
             class="login-status"
             type="button"
-            @click="handleLoginStatusClick"
-          >
+            @click="handleLoginStatusClick" >
             <FontAwesomeIcon
               :icon="faCircleUser"
               class="login-icon"
@@ -106,26 +91,19 @@ const isLoginPage = computed(() => {
             v-if="isLogged && showLogoutMenu"
             class="logout-button"
             type="button"
-            @click="logout"
-          >
+            @click="logout" >
             Logout
           </button>
         </div>
-
       </header>
-
       <hr>
 
-      <!-- BOTÕES -->
       <div class="nav-container">
-
         <div class="actions-buttons">
-
           <router-link
             to="/register"
             class="btn btn-primary"
-            :class="{ active: isPurchaseActive }"
-          >
+            :class="{ active: isPurchaseActive }" >
             <FontAwesomeIcon :icon="faCartArrowDown" />
             Nova compra
           </router-link>
@@ -133,27 +111,19 @@ const isLoginPage = computed(() => {
           <router-link
             to="/history"
             class="btn btn-secondary"
-            :class="{ active: route.path === '/history' }"
-          >
+            :class="{ active: route.path === '/history' }" >
             <FontAwesomeIcon :icon="faFileLines" />
             Histórico
           </router-link>
-
         </div>
-
       </div>
-
     </template>
 
     <router-view />
-
     <footer
       v-if="!isLoginPage"
-      class="footer"
-    >
-      <p>
-        © 2026 AvesBrasil. Todos os direitos reservados.
-      </p>
+      class="footer" >
+      <p> © 2026 AvesBrasil. Todos os direitos reservados | Contato: laisccastroc2023@gmail.com | GitHub: https://github.com/laiscastroc </p>
     </footer>
 
   </div>

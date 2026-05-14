@@ -40,7 +40,7 @@ const filterSales = computed(() => {
   <div class="page-container">
     <div class="container">
       <div class="header">
-        <h2>Histórico de Vendas</h2>
+        <h2> Histórico de Vendas </h2>
         <span class="count">{{ filterSales.length }} registros</span>
       </div>
 
@@ -57,7 +57,7 @@ const filterSales = computed(() => {
           />
 
           <select v-model="selectedBird">
-            <option value="">Todos os pássaros</option>
+            <option value=""> Todos os pássaros </option>
             <option v-for="bird in birds" :key="bird">
               {{ bird }}
             </option>
@@ -114,6 +114,7 @@ const filterSales = computed(() => {
 </template>
 
 <style scoped>
+
 .container{
   max-width:1200px;
   margin:auto;
@@ -209,4 +210,5 @@ hr {
   margin-bottom: 50px;
   width: 100%;
 }
+
 </style>

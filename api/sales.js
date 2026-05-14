@@ -40,7 +40,7 @@ function validateSale(sale) {
 export default async function handler(req, res) {
   if (!getConnectionString()) {
     return res.status(500).json({
-      message: "Variavel do banco nao configurada",
+      message: "Variável do banco não configurada!",
       expected: "DATABASE_URL ou POSTGRES_URL"
     });
   }
@@ -80,7 +80,7 @@ export default async function handler(req, res) {
 
       if (missingFields.length > 0) {
         return res.status(400).json({
-          message: "Campos obrigatorios ausentes",
+          message: "Campos obrigatórios ausentes!",
           fields: missingFields
         });
       }
@@ -115,7 +115,7 @@ export default async function handler(req, res) {
       );
 
       if (!result.rows[0]) {
-        return res.status(500).json({ message: "Venda nao foi inserida" });
+        return res.status(500).json({ message: "Venda não inserida!" });
       }
 
       return res.status(201).json(result.rows[0]);
@@ -129,5 +129,5 @@ export default async function handler(req, res) {
   }
 
   res.setHeader("Allow", "GET, POST");
-  return res.status(405).json({ message: "Metodo nao permitido" });
+  return res.status(405).json({ message: "Método não permitido" });
 }

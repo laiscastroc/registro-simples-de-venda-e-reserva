@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from "vue-router" //importa funções do roteador vue
+import { createRouter, createWebHistory } from "vue-router" 
 import HomeView from '../views/HomeView.vue'
 import HistoryView from '../views/HistoryView.vue'
 import RegisterView from "@/views/RegisterView.vue"
