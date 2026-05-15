@@ -1,42 +1,66 @@
-# bird-system
+# Sistema de registro simples de venda e reserva de aves
 
-This template should help get you started developing with Vue 3 in Vite.
+Imagem da Home - demonstração
 
-## Recommended IDE Setup
+<img width="757" height="565" alt="image" src="https://github.com/user-attachments/assets/6a528773-4aca-449b-b7b5-06008bed017b" />
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Descrição
+O projeto foi desenvolvido com foco em praticar conceitos de desenvolvimento da disciplina de WEB II do curso Análise e Desenvolvimento de Sistemas utilizando Vue, TypeScript, JavaScript e integração com banco de dados PostgreSQL via Neon Database/Vercel.
 
-## Recommended Browser Setup
+O sistema permite que o usuário (padrão) realize registros de venda ou reserva de aves e visualize o histórico. Para fazer isso, o usuário deve apertar no icon de login e inserir os dados:
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+```txt
+Email: usuario1@email.com
+Senha: 123456
+```
+Depois, para dá início ao processo de registro, aperte no botão "Registrar" em algum dos cards ou no botão de "Nova compra" junto ao de "Histórico".
 
-## Type Support for `.vue` Imports in TS
+# Observações
+Lembrando que os dados sensíveis de CPF, nome e contato já salvos no histórico são FICTÍCIOS. Lembre-se que, ao testar, também insira dados fictícios.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+# Tecnologias utilizadas
 
-## Customize configuration
+- Vue.js, Vite
+- TypeScript
+- HTML
+- CSS
+- JavaScript
+- PostgreSQL, Neon Database
+- Vercel
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+# Funcionalidades
 
-## Project Setup
+- Login de usuário (padrão)
+- Registro de venda ou reserva de aves
+- Histórico de registros
+- Integração com BD
+- Deploy online via Vercel
 
-```sh
-npm install
+# Deploy online
+O sitema está hospedado na Vercel:
+```txt
+https://registro-simples-de-venda-e-reserva.vercel.app/
 ```
 
-### Compile and Hot-Reload for Development
+# Limitações atuais
 
-```sh
-npm run dev
-```
+- O site ainda não está totalmente responsivo
+- Existem 3 opções de pagamento, porém:
+  - não há geração de QR Code para Pix
+  - não existem campos adicionais para cartão
+- O formulário não permite selecionar dois gêneros diferentes em uma única compra
 
-### Type-Check, Compile and Minify for Production
+### Exemplo:
 
-```sh
-npm run build
-```
+Caso o usuário deseje:
+- 1 arara macho
+- 1 arara fêmea
+
+Será necessário criar dois registros separados.
+
+# Desenvolvedora
+Laís Castro Costa, 5º período de Análise e Desenvolvimento de Sistemas pelo IFCE.
+
+# Contato
+- Email: laisccastroc2023@gmail.com
+- Linkedin: www.linkedin.com/in/laís-castro-569367333
